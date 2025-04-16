@@ -1,0 +1,126 @@
+import time
+import math
+
+# Function to calculate the square root of a number
+def calculate_square_root():
+    number = float(input("Enter a number to find its square root: "))
+    print(f"The square root of {number} is {math.sqrt(number)}\n")
+    time.sleep(1)
+
+# Function to calculate the area of a circle
+def calculate_circle_area():
+    radius = float(input("Enter the radius of the circle: "))
+    area = math.pi * (radius ** 2)
+    print(f"The area of the circle with radius {radius} is {area:.2f}\n")
+    time.sleep(1)
+
+# Function to calculate compound interest
+def calculate_compound_interest():
+    principal = float(input("Enter the principal amount: "))
+    rate = float(input("Enter the annual interest rate (in %): ")) / 100
+    time_period = int(input("Enter the number of years: "))
+    compound_frequency = int(input("Enter the number of times interest is compounded per year: "))
+    
+    amount = principal * (1 + rate / compound_frequency) ** (compound_frequency * time_period)
+    interest = amount - principal
+    print(f"The compound interest after {time_period} years is {interest:.2f}\n")
+    time.sleep(1)
+
+# Function to convert time from seconds to hours, minutes, and seconds
+def convert_seconds():
+    seconds = int(input("Enter the number of seconds to convert: "))
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    remaining_seconds = seconds % 60
+    print(f"{seconds} seconds is equivalent to {hours} hours, {minutes} minutes, and {remaining_seconds} seconds.\n")
+    time.sleep(1)
+
+# Function to calculate the factorial of a number
+def calculate_factorial():
+    number = int(input("Enter a number to calculate its factorial: "))
+    result = math.factorial(number)
+    print(f"The factorial of {number} is {result}\n")
+    time.sleep(1)
+
+# Function to calculate the area of a right triangle
+def calculate_triangle_area():
+    base = float(input("Enter the base of the triangle: "))
+    height = float(input("Enter the height of the triangle: "))
+    area = 0.5 * base * height
+    print(f"The area of the triangle is {area:.2f}\n")
+    time.sleep(1)
+
+# Function to calculate the logarithm of a number
+def calculate_logarithm():
+    number = float(input("Enter a number to find its natural logarithm: "))
+    if number > 0:
+        result = math.log(number)
+        print(f"The natural logarithm of {number} is {result:.2f}\n")
+    else:
+        print("Logarithm is only defined for positive numbers.\n")
+    time.sleep(1)
+
+# Function to calculate the distance between two points in 2D space
+def calculate_distance():
+    x1, y1 = float(input("Enter the x-coordinate of the first point: ")), float(input("Enter the y-coordinate of the first point: "))
+    x2, y2 = float(input("Enter the x-coordinate of the second point: ")), float(input("Enter the y-coordinate of the second point: "))
+    
+    distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    print(f"The distance between the points ({x1}, {y1}) and ({x2}, {y2}) is {distance:.2f}\n")
+    time.sleep(1)
+
+# Function to calculate the speed of an object given distance and time
+def calculate_speed():
+    distance = float(input("Enter the distance traveled (in meters): "))
+    time_taken = float(input("Enter the time taken (in seconds): "))
+    
+    if time_taken != 0:
+        speed = distance / time_taken
+        print(f"The speed of the object is {speed:.2f} meters per second.\n")
+    else:
+        print("Time taken cannot be zero.\n")
+    time.sleep(1)
+
+# Main loop with menu
+def main():
+    while True:
+        print("\nChoose an operation:")
+        print("1. Calculate Square Root")
+        print("2. Calculate Circle Area")
+        print("3. Calculate Compound Interest")
+        print("4. Convert Seconds to Hours, Minutes, and Seconds")
+        print("5. Calculate Factorial")
+        print("6. Calculate Triangle Area")
+        print("7. Calculate Natural Logarithm")
+        print("8. Calculate Distance Between Two Points")
+        print("9. Calculate Speed")
+        print("0. Exit")
+        
+        choice = input("Enter your choice (0-9): ")
+        
+        if choice == '1':
+            calculate_square_root()
+        elif choice == '2':
+            calculate_circle_area()
+        elif choice == '3':
+            calculate_compound_interest()
+        elif choice == '4':
+            convert_seconds()
+        elif choice == '5':
+            calculate_factorial()
+        elif choice == '6':
+            calculate_triangle_area()
+        elif choice == '7':
+            calculate_logarithm()
+        elif choice == '8':
+            calculate_distance()
+        elif choice == '9':
+            calculate_speed()
+        elif choice == '0':
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
